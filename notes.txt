@@ -1,0 +1,17 @@
+//type coercion
+[] + {}
+[] + 2
+don't concatenate two pieces of different data types
+"2" == 2
+"2" === 2
+hard equality check
+
+//what is REPL (Read,Evaluate,Print,Loop)
+node's REPL is just node
+
+//variables
+var leeks
+let and const keep the scope
+const needs initialization and can't be changed to reference another thing after that
+
+//event loop -> ticks

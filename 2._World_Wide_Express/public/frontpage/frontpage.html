@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css" rel="stylesheet" href="./frontpage/frontpage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Dinosaurs</h1>
+
+    <div>
+        <h3>Amount of cool Dinosaurs</h3>
+        <p id="cooldinosaurs"></p>
+    </div>
+
+    <!-- <script src="./frontpage/frontpage.js"></script> -->
+
+    <script>
+        const URL = "http://localhost:3000/calculatecooldinos";
+        fetch(URL)
+            .then(response => response.json())
+            .then(data => {
+                const values = Object.values(data);
+                console.log(values);
+                putTextInHTML(values, 'cooldinosaurs')
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        
+            function putTextInHTML(someText, tagID) {
+                console.log(tagID);
+                const tag = document.getElementById(tagID);
+                console.log(tag);
+                tag.innerText=someText;
+            }
+    </script>
+
+</body>
+</html>
